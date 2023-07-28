@@ -1,0 +1,484 @@
+@font-face {
+    font-family: "Sugar";
+    src: local("Sugar"),
+        url("../fonts/Sugar.woff2") format("woff2"),
+        url("../fonts/Sugar.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "The Nautigal";
+    src: local("The Nautigal"),
+        url("../fonts/TheNautigal.woff2") format("woff2"),
+        url("../fonts/TheNautigal.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: "Neue Machina";
+    font-size: 16px;
+    line-height: 180%;
+    color: #C7C7C7;
+    background-color: #131417;
+    overflow-x: hidden;
+}
+
+/*Typography*/
+h1 {
+    font-family: "Sugar", serif;
+    font-size: 200px;
+    font-weight: 400;
+    line-height: 82%;
+    letter-spacing: -5px;
+    color: white;
+}
+p, figure {
+    margin: 0;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.caption {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 140%;
+    color: white;
+}
+.caption_small {
+    font-size: 14px;
+    color: #C7C7C7;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 100px;
+}
+
+.telegram {
+    z-index: 1;
+    display: flex;
+    padding: 8px;
+    border-radius: 12px;
+    transition: transform .1s, background-color 1s;
+}
+.telegram:hover:not(:focus) {
+    transform: scale(1.14);
+}
+.telegram:active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.telegram__icon {
+    margin-right: 14px;
+}
+.telegram__caption {
+    max-width: 100px;
+}
+
+.twitch {
+    z-index: 1;
+    display: flex;
+    padding: 8px 14px 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    transition: transform .1s, background-color 1s;
+}
+.twitch:hover:not(:focus) {
+    transform: scale(1.14);
+}
+.twitch:active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.twitch__icon {
+    padding-top: 5px;
+    margin-right: 12px;
+}
+.twitch__content {
+    display: flex;
+    flex-direction: column;
+}
+.twitch__title {
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+}
+.twitch__title::after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 3px 0 0 5px;
+    background-image: url(../img/external-link.svg);
+}
+
+.sound {
+    width: 40px;
+    height: 40px;
+    background: url("../img/muted.svg") no-repeat center center / cover;
+    transition: .1s;
+    cursor: pointer;
+}
+.sound:hover {
+    transform: scale(1.2);
+}
+.sound_unmuted {
+    background: url("../img/unmuted.svg") no-repeat center center / cover;
+}
+
+/*HEADER*/
+.header {
+    padding: 50px 0;
+}
+.header__container {
+    display: flex;
+    justify-content: space-between;
+}
+.header__logo {
+    display: flex;
+}
+/*MAIN*/
+main {
+    flex: 1;
+}
+/*Invitation*/
+.invitation {
+    height: 100%;
+    padding-bottom: 80px;
+}
+.invitation__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+.invitation__video {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    opacity: .3;
+    overflow: hidden;
+}
+.invitation__video::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    background: linear-gradient(90deg, rgba(19,20,23,1) 0%, rgba(19,20,23,0) 100%);
+}
+.invitation__video-element {
+    height: 100%;
+}
+.invitation__video-descr {
+    display: flex;
+    align-items: center;
+}
+.invitation__figcaption {
+    display: flex;
+    flex-direction: column;
+}
+.invitation__video-caption {
+    margin-bottom: 2px;
+}
+.invitation__video-caption-small {
+    max-width: 240px;
+}
+.invitation__sound {
+    margin-right: 24px;
+}
+.invitation__text {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-bottom: 110px;
+    flex: 1;
+}
+.invitation__subline {
+    max-width: 385px;
+    margin-bottom: 45px;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 160%;
+}
+.invitation__headline {
+    position: relative;
+    margin: 0;
+    text-shadow: 0 0 1px #fff;
+}
+.invitation__headline_bright {
+    position: absolute;
+    color: #EF703A;
+    text-shadow: 0 0 2px #EF703A;
+    font-family: "The Nautigal";
+    font-weight: 400;
+    font-size: 92px;
+    line-height: 75%;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+.invitation__headline_bright-1 {
+    left: -88px;
+    transform: rotate(-10deg);
+}
+.invitation__headline_bright-2 {
+    bottom: -36px;
+    left: 350px;
+    transform: rotate(-11deg);
+}
+.invitation__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.invitation__content-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.invitation__description {
+    max-width: 330px;
+    margin-top: -0.25em;
+}
+.invitation__twitch {
+    margin-right: 60px;
+}
+
+/*Animation*/
+.fade-in {
+    opacity: 0;
+    animation: fade-in 1s ease 0s 1 normal forwards;
+}
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+/*Horizonal composition*/
+@media (max-width: 1366px) {
+    .header {
+        padding-top: 50px;
+    }
+    .container {
+        max-width: 1280px;
+        padding: 0 90px;
+    }
+    .invitation {
+        padding-bottom: 50px;
+    }
+    .invitation__twitch {
+        margin-right: 40px;
+    }
+    .invitation__headline {
+        font-size: 160px;
+    }
+    .invitation__headline_bright {
+        font-size: 70px;
+    }
+    .invitation__headline_bright-1 {
+        left: -70px;
+    }
+    .invitation__headline_bright-2 {
+        bottom: -25px;
+        left: 295px;
+        transform: rotate(-10deg);
+    }
+}
+@media (max-width: 1100px) {
+    .header {
+        padding-top: 30px;
+    }
+    .container {
+        max-width: 960px;
+        padding: 0 70px;
+    }
+    .invitation {
+        padding-bottom: 40px;
+    }
+    .invitation__text {
+        margin-bottom: 80px;
+    }
+    .invitation__headline {
+        font-size: 105px;
+    }
+    .invitation__subline {
+        font-size: 15px;
+    }
+    .invitation__description {
+        font-size: 15px;
+    }
+    .invitation__content {
+        align-items: center;
+    }
+    .caption {
+        font-size: 13px;
+    }
+    .telegram__caption {
+        max-width: 90px;
+    }
+    .twitch__title {
+        font-size: 20px;
+    }
+    .twitch__icon {
+        width: 36px;
+    }
+    .invitation__figcaption {
+        display: none;
+    }
+    .invitation__sound {
+        margin-right: 0;
+    }
+    .invitation__headline_bright {
+        font-size: 54px;
+    }
+    .invitation__headline_bright-1 {
+        left: -40px;
+        top: -18px;
+    }
+    .invitation__headline_bright-2 {
+        bottom: -20px;
+        left: 300px;
+        transform: rotate(-8deg);
+    }
+}
+@media (max-width: 940px) {
+    .invitation__subline {
+        max-width: 330px;
+    }
+    .invitation__headline_bright-2 {
+        left: 150px;
+    }
+}
+@media (max-width: 740px) {
+    .invitation__twitch {
+        margin-right: 20px;
+    }
+    .invitation__description {
+        line-height: 156%;
+        margin-right: 40px;
+    }
+}
+/*Vertical composition*/
+@media (max-width: 680px) {
+    .telegram__caption {
+        display: none;
+    }
+    .telegram__icon {
+        margin-right: 0;
+    }
+    .container {
+        max-width: 480px;
+        padding: 0 40px;
+    }
+    .header__container {
+        align-items: center;
+    }
+    .invitation__container {
+        justify-content: center;
+    }
+    .invitation__text {
+        flex: 0;
+        align-items: center;
+    }
+    .invitation__subline,
+    .invitation__headline,
+    .invitation__description {
+        text-align: center;
+    }
+    .invitation__description,
+    .invitation__twitch {
+        margin-right: 0;
+    }
+    .invitation__description {
+        margin-bottom: 36px;
+    }
+    .invitation__twitch {
+        margin-bottom: 50px;
+    }
+    .invitation__headline_bright {
+        font-size: 43px;
+    }
+    .invitation__headline_bright-1 {
+        left: calc(100% / 2 - 37px);
+        top: -38px;
+        transform: rotate(0deg);
+    }
+    .invitation__headline_bright-2 {
+        bottom: -26px;
+        left: calc(100% / 2 - 130px);
+        transform: rotate(0deg);
+    }
+    .invitation__content {
+        flex-direction: column;
+    }
+    .invitation__content-main {
+        flex-direction: column-reverse;
+    }
+}
+@media (max-width: 470px) {
+    .invitation__text {
+        margin-bottom: 60px;
+    }
+    .invitation__headline {
+        font-size: 80px;
+    }
+    .invitation__headline_bright {
+        font-size: 43px;
+    }
+}
+@media (max-width: 400px) {
+    .telegram__icon {
+        width: 34px;
+    }
+    .header {
+        padding-top: 22px;
+        padding-bottom: 30px ;
+    }
+    .container {
+        padding: 0 30px;
+    }
+    .invitation__text {
+        margin-bottom: 50px;
+    }
+    .invitation__subline {
+        margin-bottom: 34px;
+        max-width: 230px;
+        font-size: 14px;
+    }
+    .invitation__headline {
+        font-size: 76px;
+    }
+    .invitation__headline_bright {
+        font-size: 28px;
+    }
+    .invitation__headline_bright-1 {
+        left: calc(100% / 2 - 85px);
+        top: -19px;
+    }
+    .invitation__headline_bright-2 {
+        left: calc(100% / 2 - 87px);
+        bottom: -16px;
+    }
+    .invitation__description {
+        margin-bottom: 30px;
+        max-width: 230px;
+        font-size: 14px;
+    }
+    .invitation__twitch {
+        margin-bottom: 34px;
+    }
+}
