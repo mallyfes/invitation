@@ -370,7 +370,10 @@ main {
     }
     .invitation__headline {
         font-size: 160px;
-    }   
+    }
+    .invitation__headline_bright {
+        font-size: 54px;
+    }
     .invitation__headline_bright-2 {
         left: 310px;
     }
