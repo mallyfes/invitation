@@ -368,8 +368,11 @@ main {
     .invitation__subline {
         max-width: 330px;
     }
+    .invitation__headline {
+        font-size: 160px;
+    }   
     .invitation__headline_bright-2 {
-        left: 150px;
+        left: 310px;
     }
 }
 @media (max-width: 740px) {
