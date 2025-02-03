@@ -153,6 +153,7 @@ a {
 }
 .header__logo {
     display: flex;
+    align-items: center;
 }
 /*MAIN*/
 main {
